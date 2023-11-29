@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css"
+		integrity="sha384-nU14brUcp6StFntEOOEBvcJm4huWjB0OcIeQ3fltAfSmuZFrkAif0T+UtNGlKKQv" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/style.css" />
+	<style>
+		body {
+			font-family: 'Helvetica', sans-serif;
+			margin: 0;
+			padding: 0;
+			background: rgb(220, 250, 201);
+		}
+
+		.container {
+			font-family: "Times New Roman", Times, serif;
+			max-width: 800px;
+			margin: 0 auto;
+		}
+
+		header {
+			font-family: 'Helvetica', sans-serif;
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+			border-radius: 10px;
+			width: 100%;
+			/* Set width to 100% */
+		}
+
+		header h1 {
+			font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+		}
+
+		.box-container {
+			font-family: 'Helvetica', sans-serif;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			margin-top: 20px;
+		}
+
+		.box {
+			font-family: "Times New Roman", Times, serif;
+			background: rgb(60, 84, 45);
+			background: rgb(60, 84, 45);
+			background: linear-gradient(180deg, rgba(60, 84, 45, 1) 0%, rgba(113, 179, 108, 1) 7%, rgba(163, 215, 149, 1) 35%, rgba(239, 245, 199, 1) 81%, rgba(255, 235, 180, 1) 100%);
+
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			padding: 20px;
+			margin: 10px;
+			flex: 1;
+			min-width: 200px;
+		}
+
+		.box img {
+			max-width: 100%;
+			height: auto;
+			border-radius: 5px;
+		}
+
+		footer {
+			font-family: 'Helvetica', sans-serif;
+			background: rgb(145,204,159);
+background: radial-gradient(circle, rgba(145,204,159,1) 12%, rgba(111,154,111,1) 100%);
+			color: #fff;
+			padding: 20px;
+			margin-top: 20px;
+			border-radius: 10px;
+			width: 100%;
+			/* Set width to 100% */
+		}
+	</style>
+	<title>EssenceMart</title>
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-lg " style="background-color: #5e6a68;">
+		<div class="container-fluid">
+			<a class="navbar-brand text-white" href="#"><strong>EssenceMart</strong></a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link active text-white" aria-current="page" href="/"><strong>Home</strong></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-white" href="available_items"><strong>Available Items</strong></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-white" href="your_cart"><strong>Cart</strong></a>
+					</li>
+				</ul>
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link text-white" href="new_item"><strong>Add New Item</strong></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container text-center my-5">
+		<header style="background: rgb(90,135,101);
+			background: linear-gradient(234deg, rgba(90,135,101,1) 0%, rgba(145,204,159,1) 9%, rgba(125,157,113,1) 100%);">
+			<h1 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; border-radius: 10px; ">
+				Welcome to EssenceMart</h1>
+			<p>Where beauty meets nature in a celebration of pure, organic indulgence.</p>
+		</header>
+
+		<div class="box-container">
+			<div class="box">
+
+				<h2>Explore Aesthetic Organic Oils</h2>
+
+				<p>Immerse yourself in the essence of wellness with our curated collection of aesthetic organic oils.
+					Each item at EssenceMart is carefully selected to embody the harmonious blend of nature's bounty and
+					modern luxury.</p>
+				<img th:src="@{/images/u1.png}" />
+
+			</div>
+
+			<div class="box">
+
+				<h2>Indulge in Beauty Products</h2>
+				<img th:src="@{/images/2.png}" />
+
+				<p>Indulge in the artistry of beauty with our curated selection of skincare and beauty products. At
+					EssenceMart, we believe that true beauty comes from within, and our collection reflects this
+					philosophy.</p>
+
+			</div>
+
+			<div class="box">
+
+				<h2>Commitment to Sustainability</h2>
+				<p>Our commitment to sustainability and ethical practices ensures that every product at EssenceMart not
+					only enhances your natural beauty but also respects and preserves the beauty of the environment.</p>
+				<img th:src="@{/images/3.png}" />
+			</div>
+
+			<div class="box">
+				<img th:src="@{/images/Essence Mart.png}" />
+			</div>
+		</div>
+
+		<footer class="foot">
+			<div class="container ">
+				<p>Contact Us:</p>
+				<p>Email: <a href="mailto:info@essencemart.com">info@essencemart.com</a></p>
+				<p>Phone: +1 (123) 456-7890</p>
+				<hr>
+				<p>&copy; 2023 EssenceMart. All rights reserved.</p>
+			</div>
+		</footer>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+		integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+		crossorigin="anonymous"></script>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en" xmlns="https://www.thymeleaf.com">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css"
+		integrity="sha384-nU14brUcp6StFntEOOEBvcJm4huWjB0OcIeQ3fltAfSmuZFrkAif0T+UtNGlKKQv" crossorigin="anonymous">
+	<title>EssenceMart</title>
+	<style>
+		body {
+			font-family: "Times New Roman", Times, serif;
+			background: rgb(251, 238, 206);
+			background: radial-gradient(circle, rgba(251, 238, 206, 1) 45%, rgba(145, 204, 159, 1) 100%, rgba(125, 157, 113, 1) 100%);
+			margin: 0;
+			padding: 0;
+		}
+
+		.navbar {
+			background-color: #5e6a68;
+
+		}
+	</style>
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-lg" style="font-family: 'Helvetica', sans-serif;">
+		<div class="container-fluid">
+			<a class="navbar-brand text-white" href="#"><strong>EssenceMart</strong></a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link active text-white" aria-current="page" href="/"><strong>Home</strong></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-white" href="available_items"><strong>Available Items</strong></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-white" href="your_cart"><strong>Cart</strong></a>
+					</li>
+				</ul>
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link text-white" href="new_item"><strong>Add New Item</strong></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+<div class="row justify-content-center mt-5">
+			<h1 class="text-center"><Strong>Available Items</Strong></h1>
+	</div>
+	<div class="container my-5 col-md-6">
+		<table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Name</th>
+					<th scope="col">Discount</th>
+					<th scope="col">Price</th>
+					<th scope="col">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="ss : ${items}">
+					<td th:text="${ss.id}"></td>
+					<td th:text="${ss.name}"></td>
+					<td th:text="${ss.count}"></td>
+					<td th:text="${ss.price}"></td>
+					<td>
+						<a class="btn btn-secondary btn-sm" th:href="@{/addToCart/{id}(id=${ss.id})}">Add to Cart</a>
+						<a class="btn btn-primary" role="button" th:href="@{/itemEdit/{id} (id=${ss.id})}">
+							<i class="fa-regular fa-pen-to-square"></i> Edit</a>
+
+						<a class="btn btn-danger" th:href="@{/deleteItem/{id} (id=${ss.id})}">
+							<i class="fa fa-trash-o fa-lg "></i> Delete</a>
+
+					</td>
+
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+		integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+		integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+		crossorigin="anonymous"></script>
+
+</body>
+
+</html>
